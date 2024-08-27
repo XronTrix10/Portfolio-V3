@@ -1,0 +1,6 @@
+# Ignore artifacts:
+.cache
+.next
+package.json
+package-lock.json
+public
