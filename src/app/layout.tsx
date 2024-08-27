@@ -4,6 +4,7 @@ import type { JSX } from "react";
 import { Inter, JetBrains_Mono } from "next/font/google";
 
 import "@/styles/main.css";
+import Background from "@/components/Background";
 
 const inter = Inter({
   subsets: ["latin"],
