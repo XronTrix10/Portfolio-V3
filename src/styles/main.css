@@ -17,13 +17,12 @@
 }
 
 body {
-  @apply bg-dark text-light font-mono;
-  /* cursor: url('../assets/circle.svg') 15 15, auto; */
+  @apply bg-dark text-light font-mono cursor-main;
 }
 
 @layer components {
   button {
-    @apply outline-none focus:outline-none;
+    @apply outline-none focus:outline-none !cursor-main;
     /* cursor: url('../assets/circle.svg') 15 15, auto; */
     border-radius: 0.75rem;
     transition: border-radius 0.4s ease-in-out;

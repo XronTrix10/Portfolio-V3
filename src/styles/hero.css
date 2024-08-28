@@ -4,12 +4,13 @@
 
 .greet {
   font-size: 5rem;
+  font-weight: 600;
   animation: hey 1.2s ease-in-out 1s forwards;
 }
 
 .identity {
   opacity: 0;
-  animation: identity 1.5s ease-in-out 2.5s forwards;
+  animation: fadeIn 1.5s ease-in-out 2.5s forwards;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
@@ -17,6 +18,16 @@
   background: linear-gradient(to bottom, #9b9b9b, rgb(70, 70, 70));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.arrow {
+  animation: float 2s ease-in-out 1s infinite;
+
+  &:hover {
+    animation: none;
+  }
+
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 /* .name {
@@ -41,23 +52,40 @@
     animation: name 0.7s ease-in-out 1.5s forwards;
 } */
 
+/* ======= ANIMATIONS ======= */
+
 @keyframes hey {
   0% {
     font-size: 5rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   100% {
     font-size: 2.25rem;
+    font-weight: normal;
   }
 }
 
-@keyframes identity {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
   }
 }
 
