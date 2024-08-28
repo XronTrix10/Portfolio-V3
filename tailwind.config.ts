@@ -16,10 +16,16 @@ const config: Config = {
       colors: {
         dark: "#0C0C0C",
         light: "#EEEDEB",
+        "light-gray": "#9B9B9B",
+        "dark-gray": "rgb(70, 70, 70)",
       },
       fontFamily: {
         inter: "var(--font-inter)",
         mono: "var(--font-jetbrains)",
+        limelight: "var(--font-limelight)",
+      },
+      cursor: {
+        custom: "url(/cursor.svg) 15 15, auto",
       },
     },
   },
