@@ -25,7 +25,8 @@ const config: Config = {
         limelight: "var(--font-limelight)",
       },
       cursor: {
-        custom: "url(/cursor.svg) 15 15, auto",
+        main: "url(/cursor.svg) 15 15, auto",
+        btn: "url(/cursor-pointer.svg) 15 15, auto",
       },
     },
   },
