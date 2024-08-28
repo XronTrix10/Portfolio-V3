@@ -4,18 +4,24 @@
 
 .greet {
   font-size: 5rem;
-  font-weight: 600;
+  font-weight: 700;
   animation: hey 1.2s ease-in-out 1s forwards;
 }
 
 .identity {
   opacity: 0;
   animation: fadeIn 1.5s ease-in-out 2.5s forwards;
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.scout-button {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out 2.5s forwards;
+  @apply flex size-auto w-24 items-center gap-x-2 border border-dark-gray bg-transparent px-3 py-2 shadow-xl transition-all duration-300 hover:w-[6.7rem] hover:bg-light/10 hover:shadow-black active:border-light-gray;
 }
 
 .name-color {
   background: linear-gradient(to bottom, #9b9b9b, rgb(70, 70, 70));
+  background-clip: inherit;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -26,8 +32,6 @@
   &:hover {
     animation: none;
   }
-
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
 /* .name {

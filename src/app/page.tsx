@@ -18,10 +18,10 @@ const Home: FC = () => {
         <TextAnimate
           text="Xron Trix"
           type="fadeIn"
-          className="name-color mb-4 font-limelight text-[6rem] leading-none"
+          className="name-color mb-4 font-limelight text-[6rem] leading-none *:select-none"
         />
 
-        <button className="identity group mt-4 flex size-auto w-24 items-center gap-x-2 border border-dark-gray bg-transparent px-3 py-2 shadow-xl transition-all duration-300 hover:w-[6.7rem] hover:bg-light/10 hover:shadow-black">
+        <button className="scout-button group mt-4">
           Scout{" "}
           <div className="duration-300 group-hover:translate-x-2">&#x27A4;</div>
         </button>
