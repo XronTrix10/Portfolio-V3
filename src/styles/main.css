@@ -18,6 +18,20 @@
 
 body {
   @apply bg-dark text-light font-mono;
+  /* cursor: url('../assets/circle.svg') 15 15, auto; */
+}
+
+@layer components {
+  button {
+    @apply outline-none focus:outline-none;
+    /* cursor: url('../assets/circle.svg') 15 15, auto; */
+    border-radius: 0.75rem;
+    transition: border-radius 0.4s ease-in-out;
+
+    &:hover {
+      border-radius: 2rem;
+    }
+  }
 }
 
 @layer utilities {
