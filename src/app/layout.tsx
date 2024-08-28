@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import * as React from "react";
 import type { JSX } from "react";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Limelight } from "next/font/google";
 
 import "@/styles/main.css";
-import Background from "@/components/Background";
+import Background from "@/components/background";
+import classNames from "@/utils/class-names";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,7 +19,11 @@ const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
 });
 
-export const fonts = { inter, jetbrains };
+const limelight = Limelight({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-limelight",
+});
 
 export const metadata: Metadata = {
   title: "Xron Trix",
@@ -37,7 +42,13 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en">
-      <body className={jetbrains.variable}>
+      <body
+        className={classNames(
+          inter.variable,
+          jetbrains.variable,
+          limelight.variable,
+        )}
+      >
         <Background />
         {children}
       </body>
