@@ -16,6 +16,17 @@
   }
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  color: #eeedeb;
+  background: #9b9b9b1a;
+}
+
+::selection {
+  color: #eeedeb;
+  background: #9b9b9b1a;
+}
+
 body {
   @apply bg-dark text-light font-mono cursor-main;
 }
@@ -23,7 +34,6 @@ body {
 @layer components {
   button {
     @apply outline-none focus:outline-none !cursor-main;
-    /* cursor: url('../assets/circle.svg') 15 15, auto; */
     border-radius: 0.75rem;
     transition: border-radius 0.4s ease-in-out;
 
