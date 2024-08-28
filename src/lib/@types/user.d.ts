@@ -1,5 +1,5 @@
 declare namespace User {
-  type User = {
+  export type User = {
     id: string;
     name: string;
     email: string;
@@ -7,7 +7,7 @@ declare namespace User {
     createdAt: string;
   };
 
-  type UserStatus = "active" | "inactive";
+  export type UserStatus = "active" | "inactive";
 }
 
 export default User;
