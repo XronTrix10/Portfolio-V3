@@ -1,32 +1,24 @@
-import type { FC } from "react";
+"use client";
 
-import { TextAnimate } from "@/components/ui/text-animate";
+import type { JSX } from "react";
+
 import "@/styles/hero.css";
+import { useGlobalContext } from "@/lib/contexts/global-context";
+import Greet from "@/components/home/Greet";
+
 /**
  * renders the home page.
- * @returns {FC} the home page.
+ * @returns {JSX.Element} the home page.
  */
-const Home: FC = () => {
+const Home = (): JSX.Element => {
+  const { scout, setScout } = useGlobalContext();
+
+  console.log(scout);
+
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <div className="flex flex-col justify-center gap-4 text-left">
-        <h2 className="text-4xl">
-          <span className="greet">Hey!</span>{" "}
-          <span className="identity">I&apos;m</span>
-        </h2>
-
-        <TextAnimate
-          text="Xron Trix"
-          type="fadeIn"
-          className="name-color mb-4 font-limelight text-[6rem] leading-none *:select-none"
-        />
-
-        <button className="scout-button group mt-4">
-          Scout{" "}
-          <div className="duration-300 group-hover:translate-x-2">&#x27A4;</div>
-        </button>
-      </div>
-    </main>
+    <section className="flex min-h-screen items-center justify-center">
+      {scout ? <p>Scout</p> : <Greet setScout={setScout} />}
+    </section>
   );
 };
 
