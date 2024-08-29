@@ -254,7 +254,8 @@ const TextAnimate: FC<Props> = ({
               ref={ref}
               className="mr-[0.25em] inline-block whitespace-nowrap"
               aria-hidden="true"
-              key={word}
+              // eslint-disable-next-line react/no-array-index-key
+              key={`${word}-${index}`}
               initial="hidden"
               animate="visible"
               variants={container}
@@ -265,11 +266,12 @@ const TextAnimate: FC<Props> = ({
                 // staggerChildren: 0.05,
               }}
             >
-              {word.split("").map((character) => {
+              {word.split("").map((character, index) => {
                 return (
                   <motion.span
                     aria-hidden="true"
-                    key={character}
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={`${character}-${index}`}
                     variants={child}
                     className="mr-[-0.01em] inline-block"
                   >
@@ -294,8 +296,9 @@ const TextAnimate: FC<Props> = ({
       className="mt-10 px-8 py-5 pb-8 text-4xl font-black text-black md:text-5xl dark:text-neutral-100"
       {...props}
     >
-      {letters.map((letter) => (
-        <motion.span key={letter} variants={child}>
+      {letters.map((letter, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <motion.span key={`${letter}-${index}`} variants={child}>
           {letter === " " ? "\u00A0" : letter}
         </motion.span>
       ))}
