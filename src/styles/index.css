@@ -3,27 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --dark: #0c0c0c;
+  --light: #eeedeb;
+  --light-gray: #9b9b9b;
+  --dark-gray: rgb(70, 70, 70);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
   }
-}
+} */
 
 ::-moz-selection {
   /* Code for Firefox */
-  color: #eeedeb;
+  color: var(--light);
   background: #9b9b9b1a;
 }
 
 ::selection {
-  color: #eeedeb;
+  color: var(--light);
   background: #9b9b9b1a;
 }
 
@@ -39,6 +38,10 @@ body {
 
     &:hover {
       border-radius: 2rem;
+    }
+
+    &:active {
+      @apply shadow-lg scale-95 transition-all duration-300;
     }
   }
 }

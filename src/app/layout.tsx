@@ -3,9 +3,10 @@ import * as React from "react";
 import type { JSX } from "react";
 import { Inter, JetBrains_Mono, Limelight } from "next/font/google";
 
-import "@/styles/main.css";
+import "@/styles/index.css";
 import Background from "@/components/background";
 import classNames from "@/utils/class-names";
+import { GlobalProvider } from "@/lib/contexts/global-context";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -50,7 +51,9 @@ export default function RootLayout({
         )}
       >
         <Background />
-        {children}
+        <GlobalProvider>
+          <main className="mx-auto max-w-screen-md">{children}</main>
+        </GlobalProvider>
       </body>
     </html>
   );
