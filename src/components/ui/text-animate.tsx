@@ -5,6 +5,8 @@ import { useRef } from "react";
 import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 
+import { generateKey } from "@/utils/key-generator";
+
 type AnimationType =
   | "fadeIn"
   | "fadeInUp"
@@ -254,8 +256,7 @@ const TextAnimate: FC<Props> = ({
               ref={ref}
               className="mr-[0.25em] inline-block whitespace-nowrap"
               aria-hidden="true"
-              // eslint-disable-next-line react/no-array-index-key
-              key={`${word}-${index}`}
+              key={generateKey(word, index)}
               initial="hidden"
               animate="visible"
               variants={container}
@@ -270,8 +271,7 @@ const TextAnimate: FC<Props> = ({
                 return (
                   <motion.span
                     aria-hidden="true"
-                    // eslint-disable-next-line react/no-array-index-key
-                    key={`${character}-${index}`}
+                    key={generateKey(character, index)}
                     variants={child}
                     className="mr-[-0.01em] inline-block"
                   >
@@ -297,8 +297,7 @@ const TextAnimate: FC<Props> = ({
       {...props}
     >
       {letters.map((letter, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <motion.span key={`${letter}-${index}`} variants={child}>
+        <motion.span key={generateKey(letter, index)} variants={child}>
           {letter === " " ? "\u00A0" : letter}
         </motion.span>
       ))}
