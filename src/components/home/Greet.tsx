@@ -22,7 +22,7 @@ const Greet: FC<GreetProps> = ({ setScout }: GreetProps): JSX.Element => {
       <TextAnimate
         text="Xron Trix"
         type="fadeIn"
-        className="name-color mb-4 font-limelight text-[6rem] leading-none *:select-none"
+        className="name-color mb-4 font-limelight text-8xl leading-none *:select-none 2xl:text-9xl"
       />
 
       <button
