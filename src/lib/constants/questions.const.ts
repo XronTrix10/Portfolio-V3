@@ -47,12 +47,12 @@ export const questions = [
   },
   {
     question: "Favorite tools?",
-    command: "which tools",
+    command: "ls /tools | head -n 10",
     answer: "I use Visual Studio Code as my primary code editor.",
   },
   {
     question: "Favorite websites?",
-    command: "which websites",
+    command: "cat web.txt | head -n 10",
     answer: "I love to browse websites and learn new things.",
   },
   {
