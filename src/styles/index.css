@@ -48,13 +48,13 @@
 }
 
 body {
-  @apply bg-dark text-light font-mono cursor-main;
+  @apply bg-dark text-light font-mono cursor-main scroll-smooth;
 }
 
 @layer components {
   button,
   .btn {
-    @apply outline-none focus:outline-none !cursor-main;
+    @apply outline-none focus:outline-none;
     border-radius: 0.75rem;
     transition: border-radius 0.4s ease-in-out;
 
