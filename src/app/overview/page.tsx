@@ -2,6 +2,8 @@ import type { JSX } from "react";
 
 import Divider from "@/components/ui/divider";
 import DownArrow from "@/assets/icons/down-arrow";
+import BlinkingCursor from "@/components/ui/blinking-cursor";
+import Question from "@/components/question";
 
 /**
  * renders the overview page.
@@ -10,6 +12,7 @@ import DownArrow from "@/assets/icons/down-arrow";
 const page = (): JSX.Element => {
   const questions = [
     "Who/What is Xron Trix?!",
+    "What I actually do?",
     "Skills? Experience?",
     "Where I'm from?",
     "What is my current role?",
@@ -17,6 +20,7 @@ const page = (): JSX.Element => {
     "Favorite technologies?",
     "Favorite tools?",
     "Favorite websites?",
+    "Hobbies?",
     "Favorite books?",
     "Favorite movies?",
   ];
@@ -35,7 +39,8 @@ const page = (): JSX.Element => {
           With <span className="text-white"> 3+ years</span> of experience in{" "}
           <span className="text-light"> JavaScript</span> and{" "}
           <span className="text-light"> TypeScript</span>, I have built multiple
-          responsive and interactive user interfaces.
+          responsive and interactive user interfaces
+          <BlinkingCursor text="_" className="font-bold" />
         </article>
 
         <div className="self-center p-4 opacity-50 duration-200 hover:text-light-gray hover:opacity-100">
@@ -61,9 +66,7 @@ const page = (): JSX.Element => {
           <ol className="flex max-h-72 flex-col gap-y-4 overflow-y-auto px-2 pb-12 text-light-gray 2xl:max-h-80">
             {questions.map((question) => (
               <li key={question[0]}>
-                <div className="btn w-full border border-dark-gray px-4 py-3 text-sm shadow-xl transition-all duration-300 hover:rounded-xl hover:bg-light/10 hover:text-light hover:shadow-black 2xl:text-base">
-                  {question}
-                </div>
+                <Question question={question} command={""} answer={""} />
               </li>
             ))}
           </ol>
