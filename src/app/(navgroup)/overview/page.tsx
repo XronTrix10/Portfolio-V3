@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import Link from "next/link";
 
 import Divider from "@/components/ui/divider";
 import DownArrow from "@/assets/icons/down-arrow";
@@ -29,7 +30,7 @@ const page = (): JSX.Element => {
           <BlinkingCursor text="_" className="font-bold" />
         </article>
 
-        <div className="self-center p-4 opacity-50 duration-200 hover:text-light-gray hover:opacity-100">
+        <div className="self-center p-4 duration-200 hover:text-light-gray">
           <DownArrow />
         </div>
 
@@ -60,6 +61,12 @@ const page = (): JSX.Element => {
                 />
               </li>
             ))}
+            <li className="mx-auto my-4 flex w-fit gap-x-2 text-center text-sm 2xl:text-base">
+              Didn&apos;t find your answer? <br />{" "}
+              <Link href={"/contact"} className="text-light hover:underline">
+                Ask me!
+              </Link>
+            </li>
           </ol>
           <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-dark to-transparent" />
         </div>
