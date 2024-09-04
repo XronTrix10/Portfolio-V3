@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.question {
+  @apply w-full border border-dark-gray px-4 py-3 text-sm shadow-xl rounded-xl transition-all duration-300 hover:bg-light/10 hover:text-light hover:shadow-black 2xl:text-base;
+}
