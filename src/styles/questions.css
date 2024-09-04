@@ -4,7 +4,7 @@
 
 @layer utilities {
   .question {
-    @apply w-full border border-dark-gray px-4 py-3 text-sm shadow-xl rounded-xl transition-all duration-300 group-hover:bg-light/10 group-hover:text-light group-hover:shadow-black 2xl:text-base;
+    @apply w-full border border-dark-gray/50 px-4 py-3 text-sm shadow-xl rounded-xl transition-all duration-300 group-hover:bg-light/10 group-hover:text-light group-hover:shadow-black 2xl:text-base;
   }
 
   .command-box {
