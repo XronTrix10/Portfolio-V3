@@ -4,27 +4,13 @@ import Divider from "@/components/ui/divider";
 import DownArrow from "@/assets/icons/down-arrow";
 import BlinkingCursor from "@/components/ui/blinking-cursor";
 import Question from "@/components/question";
+import { questions } from "@/lib/constants/questions.const";
 
 /**
  * renders the overview page.
  * @returns {JSX.Element} the overview page.
  */
 const page = (): JSX.Element => {
-  const questions = [
-    "Who/What is Xron Trix?!",
-    "What I actually do?",
-    "Skills? Experience?",
-    "Where I'm from?",
-    "What is my current role?",
-    "Strengths and weaknesses?",
-    "Favorite technologies?",
-    "Favorite tools?",
-    "Favorite websites?",
-    "Hobbies?",
-    "Favorite books?",
-    "Favorite movies?",
-  ];
-
   return (
     <div className="flex min-h-screen grow flex-row items-center justify-center gap-x-12 2xl:gap-x-20">
       <div className="flex w-1/2 flex-col px-2 text-dark-gray 2xl:px-6 2xl:text-lg">
@@ -64,9 +50,14 @@ const page = (): JSX.Element => {
         <div className="relative mt-10">
           {/* <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-dark to-transparent" /> */}
           <ol className="flex max-h-72 flex-col gap-y-4 overflow-y-auto px-2 pb-12 text-light-gray 2xl:max-h-80">
-            {questions.map((question) => (
-              <li key={question[0]}>
-                <Question question={question} command={""} answer={""} />
+            {questions.map((question, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <li key={`${question.question[0]}-${index}`}>
+                <Question
+                  question={question.question}
+                  command={question.command}
+                  answer={""}
+                />
               </li>
             ))}
           </ol>
