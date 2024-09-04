@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.question {
-  @apply w-full border border-dark-gray px-4 py-3 text-sm shadow-xl rounded-xl transition-all duration-300 hover:bg-light/10 hover:text-light hover:shadow-black 2xl:text-base;
+@layer utilities {
+  .question {
+    @apply w-full border border-dark-gray px-4 py-3 text-sm shadow-xl rounded-xl transition-all duration-300 group-hover:bg-light/10 group-hover:text-light group-hover:shadow-black 2xl:text-base;
+  }
+
+  .command-box {
+    @apply flex h-0 items-center justify-between rounded-b-xl bg-gradient-to-t from-light/5 to-transparent text-sm transition-all duration-500 group-hover:h-auto group-hover:p-4 2xl:text-base;
+  }
+
+  .command {
+    @apply hidden duration-300 group-hover:inline-block;
+  }
 }

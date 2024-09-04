@@ -23,10 +23,19 @@ const Question: FC<QuestionProps> = ({
   className = "",
 }: QuestionProps): JSX.Element => {
   return (
-    <div className={classNames("question", className)}>
-      {question}
-      {command}
-      {answer}
+    <div className="group hover:mb-2">
+      <div className={classNames("question", className)}>
+        {question}
+        {answer}
+      </div>
+      <div className="command-box">
+        <span className="command">~$ {command}</span>
+        <button className="command">
+          <span className="hover:font-semibold hover:text-light">
+            Run &#9654;
+          </span>
+        </button>
+      </div>
     </div>
   );
 };
