@@ -6,6 +6,7 @@
   --dark: #0c0c0c;
   --light: #eeedeb;
   --light-gray: #9b9b9b;
+  --selection-color: #9b9b9b1a;
   --dark-gray: rgb(70, 70, 70);
 }
 
@@ -15,15 +16,35 @@
   }
 } */
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--selection-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-gray);
+}
+
 ::-moz-selection {
   /* Code for Firefox */
   color: var(--light);
-  background: #9b9b9b1a;
+  background: var(--selection-color);
 }
 
 ::selection {
   color: var(--light);
-  background: #9b9b9b1a;
+  background: var(--selection-color);
 }
 
 body {
@@ -31,7 +52,8 @@ body {
 }
 
 @layer components {
-  button {
+  button,
+  .btn {
     @apply outline-none focus:outline-none !cursor-main;
     border-radius: 0.75rem;
     transition: border-radius 0.4s ease-in-out;
