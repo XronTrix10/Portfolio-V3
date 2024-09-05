@@ -52,7 +52,7 @@ export default function RootLayout({
       >
         <Background />
         <GlobalProvider>
-          <main className="mx-auto max-w-screen-md">{children}</main>
+          <main>{children}</main>
         </GlobalProvider>
       </body>
     </html>
