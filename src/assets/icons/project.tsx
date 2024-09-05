@@ -1,17 +1,13 @@
 import type { FC, JSX } from "react";
 
-type ProjectProps = {
-  size?: number;
-};
+import type { IconType } from "@/lib/@types";
 
 /**
  * renders the project component.
- * @param {ProjectProps} props the project component props.
+ * @param {IconType} props the project component props.
  * @returns {JSX.Element} the project component.
  */
-const Project: FC<ProjectProps> = ({
-  size = 24,
-}: ProjectProps): JSX.Element => {
+const Project: FC<IconType> = ({ size = 24 }: IconType): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

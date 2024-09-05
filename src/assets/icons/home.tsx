@@ -1,17 +1,13 @@
 import type { FC, JSX } from "react";
 
-type HomeIconProps = {
-  size?: number;
-};
+import type { IconType } from "@/lib/@types";
 
 /**
  * renders the HomeIcon component.
- * @param {HomeIconProps} props the HomeIcon component props.
+ * @param {IconType} props the HomeIcon component props.
  * @returns {JSX.Element} the HomeIcon component.
  */
-const HomeIcon: FC<HomeIconProps> = ({
-  size = 24,
-}: HomeIconProps): JSX.Element => {
+const HomeIcon: FC<IconType> = ({ size = 24 }: IconType): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

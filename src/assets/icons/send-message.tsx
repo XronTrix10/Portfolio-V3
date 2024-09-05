@@ -1,17 +1,15 @@
 import type { FC, JSX } from "react";
 
-type SendMessageIconProps = {
-  size?: number;
-};
+import type { IconType } from "@/lib/@types";
 
 /**
  * renders the SendMessageIcon component.
- * @param {SendMessageIconProps} props the SendMessageIcon component props.
+ * @param {IconType} props the SendMessageIcon component props.
  * @returns {JSX.Element} the SendMessageIcon component.
  */
-const SendMessageIcon: FC<SendMessageIconProps> = ({
+const SendMessageIcon: FC<IconType> = ({
   size = 24,
-}: SendMessageIconProps): JSX.Element => {
+}: IconType): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

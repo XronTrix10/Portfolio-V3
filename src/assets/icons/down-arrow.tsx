@@ -1,17 +1,13 @@
 import type { FC, JSX } from "react";
 
-type downArrowProps = {
-  size?: number;
-};
+import type { IconType } from "@/lib/@types";
 
 /**
  * renders the down-arrow component.
- * @param {downArrowProps} props the down-arrow component props.
+ * @param {IconType} props the down-arrow component props.
  * @returns {JSX.Element} the down-arrow component.
  */
-const DownArrow: FC<downArrowProps> = ({
-  size = 24,
-}: downArrowProps): JSX.Element => {
+const DownArrow: FC<IconType> = ({ size = 24 }: IconType): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

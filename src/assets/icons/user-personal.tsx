@@ -1,17 +1,15 @@
 import type { FC, JSX } from "react";
 
-type UserPersonalIconProps = {
-  size?: number;
-};
+import type { IconType } from "@/lib/@types";
 
 /**
  * renders the UserPersonalIcon component.
- * @param {UserPersonalIconProps} props the UserPersonalIcon component props.
+ * @param {IconType} props the UserPersonalIcon component props.
  * @returns {JSX.Element} the UserPersonalIcon component.
  */
-const UserPersonalIcon: FC<UserPersonalIconProps> = ({
+const UserPersonalIcon: FC<IconType> = ({
   size = 24,
-}: UserPersonalIconProps): JSX.Element => {
+}: IconType): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

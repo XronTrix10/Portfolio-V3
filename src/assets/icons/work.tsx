@@ -1,15 +1,13 @@
 import type { FC, JSX } from "react";
 
-type WorkProps = {
-  size?: number;
-};
+import type { IconType } from "@/lib/@types";
 
 /**
  * renders the work component.
- * @param {WorkProps} props the work component props.
+ * @param {IconType} props the work component props.
  * @returns {JSX.Element} the work component.
  */
-const WorkIcon: FC<WorkProps> = ({ size = 24 }: WorkProps): JSX.Element => {
+const WorkIcon: FC<IconType> = ({ size = 24 }: IconType): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
