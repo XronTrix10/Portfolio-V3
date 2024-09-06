@@ -18,8 +18,8 @@ const links =
  */
 const Navbar = (): JSX.Element => {
   return (
-    <nav className="fixed bottom-10 z-20 w-screen">
-      <div className="mx-auto flex w-fit items-center justify-between gap-x-2 rounded-full border border-dark-gray/50 bg-light/5 px-3 py-2 text-sm text-light-gray/80 shadow-xl *:text-xs shadow-black">
+    <nav className="fixed bottom-6 z-20 w-screen">
+      <div className="mx-auto flex w-fit items-center justify-between gap-x-2 rounded-full border border-dark-gray/50 bg-light/5 px-3 py-2 text-sm text-light-gray/80 shadow-xl shadow-black *:text-xs">
         <Link href="/overview" className={links}>
           <HomeIcon />
         </Link>
