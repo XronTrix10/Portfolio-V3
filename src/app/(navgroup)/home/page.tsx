@@ -8,8 +8,8 @@ import Question from "@/components/question";
 import { questions } from "@/lib/constants/questions.const";
 
 /**
- * renders the overview page.
- * @returns {JSX.Element} the overview page.
+ * renders the home page.
+ * @returns {JSX.Element} the home page.
  */
 const page = (): JSX.Element => {
   return (
