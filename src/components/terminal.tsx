@@ -12,6 +12,9 @@ import { executeCommand } from "@/lib/constants/commands.const";
 type TerminalProps = {
   isOpen: boolean;
   onClose: () => void;
+  isInteractive?: boolean;
+  inCmd?: string;
+  inOutput?: React.ReactNode;
 };
 
 /**
@@ -22,6 +25,9 @@ type TerminalProps = {
 const Terminal: FC<TerminalProps> = ({
   isOpen,
   onClose,
+  isInteractive = false,
+  inCmd,
+  inOutput,
 }: TerminalProps): JSX.Element => {
   const [input, setInput] = useState<string>("");
   const [storedValue, updateValue] = useLocalStorageArray(".bash_history", []);
@@ -48,6 +54,7 @@ const Terminal: FC<TerminalProps> = ({
   };
 
   useEffect(() => {
+    // Scrolls to the bottom of the terminal div
     if (terminalDiv.current) {
       terminalDiv.current.scrollTop = terminalDiv.current.scrollHeight;
     }
@@ -58,6 +65,7 @@ const Terminal: FC<TerminalProps> = ({
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
         <Dialog.Content className="fixed inset-0 flex items-center justify-center">
+          <Dialog.Title />
           <Draggable handle=".terminal-header">
             <div className="h-[450px] w-[700px] overflow-hidden rounded-xl bg-black/80 shadow-lg backdrop-blur-sm">
               {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
@@ -71,30 +79,42 @@ const Terminal: FC<TerminalProps> = ({
                 ref={terminalDiv}
                 className="h-[calc(100%-40px)] overflow-y-auto overflow-x-hidden p-2 text-sm text-light"
               >
-                <pre>
-                  {storedValue.map((line, index) => (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <span key={index}>
-                      {line}
+                {isInteractive ? (
+                  <div>
+                    <span>┌──(guest㉿trix)-[~]</span>
+                    <br />
+                    <span>
+                      └─$ {inCmd}
                       <br />
                     </span>
-                  ))}
-                  <span>┌──(guest㉿trix)-[~]</span>
-                  <br />
-                  <span>
-                    └─${" "}
-                    <input
-                      type="text"
-                      value={input}
-                      onChange={handleInputChange}
-                      onKeyDown={handleKeyDown}
-                      autoFocus
-                      spellCheck={false}
-                      placeholder="Type help for commands..."
-                      className="w-[500px] border-none bg-transparent text-light outline-none placeholder:text-dark-gray"
-                    />
-                  </span>
-                </pre>
+                    <div className="mt-3">{inOutput}</div>
+                  </div>
+                ) : (
+                  <pre>
+                    {storedValue.map((line, index) => (
+                      // eslint-disable-next-line react/no-array-index-key
+                      <span key={`${index}-${line[0]}`}>
+                        {line}
+                        <br />
+                      </span>
+                    ))}
+                    <span>┌──(guest㉿trix)-[~]</span>
+                    <br />
+                    <span>
+                      └─${" "}
+                      <input
+                        type="text"
+                        value={input}
+                        onChange={handleInputChange}
+                        onKeyDown={handleKeyDown}
+                        autoFocus
+                        spellCheck={false}
+                        placeholder="Type help for commands..."
+                        className="w-[500px] border-none bg-transparent text-light outline-none placeholder:text-dark-gray"
+                      />
+                    </span>
+                  </pre>
+                )}
               </div>
             </div>
           </Draggable>

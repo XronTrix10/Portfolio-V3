@@ -1,13 +1,17 @@
-import type { FC, JSX } from "react";
+"use client";
+
+import type { FC, JSX, ReactNode } from "react";
+import { useEffect, useState } from "react";
 
 import classNames from "@/utils/class-names";
+import Terminal from "@/components/terminal";
 
 import "@/styles/questions.css";
 
 type QuestionProps = {
   question: string;
   command: string;
-  answer: string;
+  answer: ReactNode;
   className?: string;
 };
 
@@ -19,23 +23,33 @@ type QuestionProps = {
 const Question: FC<QuestionProps> = ({
   question,
   command,
-  answer,
   className = "",
+  answer,
 }: QuestionProps): JSX.Element => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
+
   return (
     <div className="group hover:mb-2">
-      <div className={classNames("question", className)}>
-        {question}
-        {answer}
-      </div>
+      <div className={classNames("question", className)}>{question}</div>
       <div className="command-box">
         <span className="command">~$ {command}</span>
-        <button className="command">
+        <button className="command" onClick={() => setIsOpen(!isOpen)}>
           <span className="hover:font-semibold hover:text-light">
             Run &#9654;
           </span>
         </button>
       </div>
+      <Terminal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        isInteractive={true}
+        inCmd={command}
+        inOutput={answer}
+      />
     </div>
   );
 };

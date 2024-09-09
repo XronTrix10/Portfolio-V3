@@ -57,7 +57,7 @@ const page = (): JSX.Element => {
                 <Question
                   question={question.question}
                   command={question.command}
-                  answer={""}
+                  answer={question.answer}
                 />
               </li>
             ))}
