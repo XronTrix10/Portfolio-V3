@@ -3,3 +3,4 @@ export { default as Project } from "./project";
 export { default as WorkIcon } from "./work";
 export { default as SendMessageIcon } from "./send-message";
 export { default as UserPersonalIcon } from "./user-personal";
+export { default as Terminal } from "./terminal";

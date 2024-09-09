@@ -3,7 +3,7 @@ import type { FC, JSX } from "react";
 import type { IconType } from "@/lib/@types";
 
 /**
- * description
+ * renders the close icon.
  * @param {IconType} props - the icon props.
  * @returns {JSX.Element} the close icon.
  */
