@@ -5,10 +5,11 @@ import {
   HomeIcon,
   Project,
   SendMessageIcon,
-  Terminal as TerminalIcon,
   UserPersonalIcon,
   WorkIcon,
 } from "@/assets/icons";
+
+import NavbarTerminal from "./navbar-terminal";
 
 const links =
   "rounded-full p-2 transition-all duration-500 hover:bg-light/10 hover:text-light";
@@ -39,11 +40,7 @@ const Navbar = (): JSX.Element => {
           </Link>
         </div>
 
-        <div className="flex w-fit items-center justify-between gap-x-2 rounded-full border border-dark-gray/50 bg-light/5 px-2 py-1 text-sm text-light-gray/80 shadow-xl shadow-black *:text-xs 2xl:px-3 2xl:py-2">
-          <button className="p-2 transition-all duration-500 hover:text-light">
-            <TerminalIcon />
-          </button>
-        </div>
+        <NavbarTerminal />
       </div>
     </nav>
   );
