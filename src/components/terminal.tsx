@@ -59,7 +59,7 @@ const Terminal: FC<TerminalProps> = ({
         <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
         <Dialog.Content className="fixed inset-0 flex items-center justify-center">
           <Draggable handle=".terminal-header">
-            <div className="h-[400px] w-[600px] overflow-hidden rounded-xl bg-black/80 shadow-lg backdrop-blur-sm">
+            <div className="h-[450px] w-[700px] overflow-hidden rounded-xl bg-black/80 shadow-lg backdrop-blur-sm">
               {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
               <div className="terminal-header flex cursor-move items-center justify-between bg-gradient-to-r from-dark to-transparent py-1 pl-4 pr-2 text-light">
                 <span className="text-sm">Xron Terminal</span>
