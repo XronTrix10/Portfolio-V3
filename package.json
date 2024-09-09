@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.1",
-    "@xterm/addon-fit": "^0.10.0",
-    "@xterm/xterm": "^5.5.0",
+    "cowsay": "^1.6.0",
     "framer-motion": "^11.3.30",
     "next": "14.2.6",
     "react": "^18",
