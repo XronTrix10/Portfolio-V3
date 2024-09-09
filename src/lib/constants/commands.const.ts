@@ -7,7 +7,9 @@ import { say, think } from "cowsay";
 export const commands: { [key: string]: string } = {
   pwd: "/home/guest",
   "cat welcome.txt": "Welcome in my portfolio!\n",
-  help: "help - Displays all available commands\npwd- Print working directory\ncat - Displays the contents of a file\nls - Lists the contents of a directory\necho - Prints a message\nuname - Displays the current environment\nwhoami - Displays the user name\ndate - Displays the current date\nclear - Clears the terminal\nrm - Try to remove a file\ncd - Try to change directory\nsudo - Try to run a command as root\n",
+  date: new Date().toLocaleString(),
+  time: new Date().toLocaleTimeString(),
+  help: "help - Displays all available commands\npwd- Print working directory\ncat - Displays the contents of a file\nls - Lists the contents of a directory\necho - Prints a message\nuname - Displays the current environment\nwhoami - Displays the user name\ndate - Displays the current date\ntime - Displays the current time\nclear - Clears the terminal\nrm - Try to remove a file\ncd - Try to change directory\nsudo - Try to run a command as root\n",
 };
 
 /**
@@ -52,8 +54,6 @@ export const executeCommand = (
         cmd,
         think({
           text: "Stay at home, no directory change!",
-          eyes: "^^",
-          tongue: " U",
         }),
       ),
     );
@@ -74,8 +74,6 @@ export const executeCommand = (
   } else if (cmd.startsWith("echo")) {
     const message = cmd.slice(5);
     updateValue(appendCmd(preValue, cmd, message));
-  } else if (cmd.startsWith("date")) {
-    updateValue(appendCmd(preValue, cmd, new Date().toLocaleString()));
   } else if (cmd.startsWith("whoami")) {
     updateValue(appendCmd(preValue, cmd, "guest"));
   } else {
