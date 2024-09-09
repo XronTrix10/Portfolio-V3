@@ -61,8 +61,8 @@ const Terminal: FC<TerminalProps> = ({
           <Draggable handle=".terminal-header">
             <div className="h-[450px] w-[700px] overflow-hidden rounded-xl bg-black/80 shadow-lg backdrop-blur-sm">
               {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-              <div className="terminal-header flex cursor-move items-center justify-between bg-gradient-to-r from-dark to-transparent py-1 pl-4 pr-2 text-light">
-                <span className="text-sm">Xron Terminal</span>
+              <div className="terminal-header flex cursor-move items-center justify-between bg-gradient-to-r from-dark-gray to-dark py-1 pl-4 pr-2 text-light">
+                <span className="text-sm">Terminal Pro</span>
                 <Dialog.Close className="p-[2px] hover:bg-red-500">
                   <CloseIcon size={18} />
                 </Dialog.Close>
