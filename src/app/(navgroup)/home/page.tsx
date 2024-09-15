@@ -2,7 +2,6 @@ import type { JSX } from "react";
 import Link from "next/link";
 
 import Divider from "@/components/ui/divider";
-import DownArrow from "@/assets/icons/down-arrow";
 import BlinkingCursor from "@/components/ui/blinking-cursor";
 import Question from "@/components/question";
 import { questions } from "@/lib/constants/questions.const";
@@ -27,18 +26,13 @@ const page = (): JSX.Element => {
           <span className="text-light"> JavaScript</span> and{" "}
           <span className="text-light"> TypeScript</span>, I have built multiple
           responsive and interactive user interfaces
-          <BlinkingCursor text="_" className="font-bold" />
         </article>
 
-        <div className="self-center p-4 duration-200 hover:text-light-gray">
-          <DownArrow />
-        </div>
-
-        {/* <article>
-          and <span className="text-light"> Next.js</span>, and am familiar with{" "}
-          <span className="text-light"> Tailwind CSS</span> and{" "}
-          <span className="text-light"> CSS Modules</span>.
-        </article> */}
+        <article className="mt-6">
+          Wanna <span className="text-light">know more</span>? Checkout the{" "}
+          <span className="text-light">questions</span> to find more
+          <BlinkingCursor text="_" className="font-bold" />
+        </article>
       </div>
 
       <Divider direction="vertical" className="h-72 self-center 2xl:h-96" />
@@ -49,7 +43,6 @@ const page = (): JSX.Element => {
         </h3>
 
         <div className="relative mt-10">
-          {/* <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-dark to-transparent" /> */}
           <ol className="flex max-h-72 flex-col gap-y-4 overflow-y-auto px-2 pb-12 text-light-gray 2xl:max-h-80">
             {questions.map((question, index) => (
               // eslint-disable-next-line react/no-array-index-key
