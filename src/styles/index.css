@@ -8,6 +8,7 @@
   --light-gray: #9b9b9b;
   --selection-color: #9b9b9b1a;
   --dark-gray: rgb(70, 70, 70);
+  --golden-yellow: #fef08a;
 }
 
 /* @media (prefers-color-scheme: dark) {

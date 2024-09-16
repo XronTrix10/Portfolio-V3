@@ -15,3 +15,57 @@
     @apply hidden duration-300 group-hover:inline-block;
   }
 }
+
+.qn_answer {
+  padding-right: 8rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.7rem;
+
+  span {
+    color: var(--golden-yellow);
+  }
+
+  a {
+    color: var(--golden-yellow);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    max-width: 20rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  h4 {
+    margin: 1rem 0;
+    color: var(--golden-yellow);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: smaller;
+  }
+
+  table th,
+  table td {
+    border: 1px dashed #9b9b9b7a;
+    padding: 8px;
+    color: var(--light);
+    text-align: left;
+  }
+
+  table th {
+    color: white;
+    font-size: small;
+  }
+}
