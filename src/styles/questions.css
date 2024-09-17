@@ -36,7 +36,7 @@
   }
 
   ul {
-    max-width: 20rem;
+    max-width: 40rem;
 
     li {
       display: flex;
@@ -67,5 +67,34 @@
   table th {
     color: white;
     font-size: small;
+  }
+}
+
+.quotes {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+
+  a {
+    color: var(--golden-yellow);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.7rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &:hover {
+        color: var(--light-gray);
+      }
+    }
   }
 }
