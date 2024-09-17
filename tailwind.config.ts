@@ -18,6 +18,7 @@ const config: Config = {
         light: "#EEEDEB",
         "light-gray": "#9B9B9B",
         "dark-gray": "rgb(70, 70, 70)",
+        "golden-yellow": "#FEF08A",
       },
       fontFamily: {
         inter: "var(--font-inter)",
