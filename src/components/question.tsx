@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC, JSX, ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import classNames from "@/utils/class-names";
 import Terminal from "@/components/terminal";
@@ -27,10 +27,6 @@ const Question: FC<QuestionProps> = ({
   answer,
 }: QuestionProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    console.log(isOpen);
-  }, [isOpen]);
 
   return (
     <div className="group hover:mb-2">
