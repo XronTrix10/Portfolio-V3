@@ -10,7 +10,7 @@ const Page = (): JSX.Element => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center text-light-gray">
       <h4 className="flex gap-x-4 text-light">
-        Picking up my best projects to showcase <MagicIcon />
+        Loading my work experience... <MagicIcon />
       </h4>
       <p className="mt-4">Come back within a few days!</p>
     </div>
