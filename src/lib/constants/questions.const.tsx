@@ -260,9 +260,12 @@ export const questions: {
     question: "What is my current role?",
     command: "which role",
     answer: (
-      <article>
-        I&apos;m a front-end developer with a passion for developing full-stack
-        applications.
+      <article className="qn_answer">
+        <p>
+          Currently, I&apos;m a front-end developer intern at{" "}
+          <a href="https://in.linkedin.com/company/pegnamindiapvtltd">Pegman</a>{" "}
+          ;)
+        </p>
       </article>
     ),
   },
@@ -270,64 +273,265 @@ export const questions: {
     question: "Strengths and weaknesses?",
     command: "describe --strengths --weakness",
     answer: (
-      <div>
-        My strengths include my ability to develop full-stack applications and
-        my passion for front-end development.
-      </div>
+      <article className="qn_answer">
+        <p>My strength is me, myself. I am a resolute.</p>
+        <p>
+          I was a back bencher till my high school and never really cared about
+          anything. Now when I look back, I feel proud of me for coming this far
+          :)
+        </p>
+        <p>
+          I believe that I can do anything I set my mind to. Self believe is my
+          biggest strength
+        </p>
+        <p>
+          My weaknesses include my little short term memory and a little
+          nervousness in public speaking. Though I am working on it :D
+        </p>
+      </article>
     ),
   },
   {
     question: "Favorite technologies?",
-    command: "which techs",
+    command: "which techs --format=list",
     answer: (
-      <div>
-        I&apos;m a front-end developer with a passion for developing full-stack
-        applications.
-      </div>
+      <article className="qn_answer">
+        <h4>Just Listing my favourites here :D</h4>
+        <ul>
+          <li>Next.js</li>
+          <li>TypeScript</li>
+          <li>TailwindCSS</li>
+          <li>PostgreSQl</li>
+          <li>Go</li>
+        </ul>
+        ---
+        <ul>
+          <li>VSCode (IDE)</li>
+          <li>GitHub (Hosting)</li>
+          <li>Pieces (AI Helper)</li>
+          <li>Bruno (API Testing)</li>
+          <li>Figma (UI Design)</li>
+          <li>Brave (Browser)</li>
+          <li>Obsidian (Notes)</li>
+        </ul>
+      </article>
     ),
   },
   {
     question: "Which Operating System do I use?",
     command: "which os",
-    answer: <div>I use Windows 10.</div>,
-  },
-  {
-    question: "Favorite tools?",
-    command: "ls /tools | head -n 10",
-    answer: <div>I use Visual Studio Code as my primary code editor.</div>,
+    answer: (
+      <article className="qn_answer">
+        <p>I use Windows 11 for gaming &gt;&lt;</p>
+        <p>
+          And <span>Debian based</span> distro (mainly Zorin OS) for everything
+          else :D
+        </p>
+
+        <p>My fav distro till now are - </p>
+
+        <ul>
+          <li>
+            <span>Zorin OS</span>
+          </li>
+          <li>
+            <span>Deepin OS</span>
+          </li>
+          <li>
+            <span>Kali</span>
+          </li>
+          <li>
+            <span>Archcraft</span>
+          </li>
+          <li>
+            <span>Garuda Linux</span>
+          </li>
+        </ul>
+      </article>
+    ),
   },
   {
     question: "Favorite websites?",
     command: "cat web.txt | tail -n 10",
-    answer: <div>I love to browse websites and learn new things.</div>,
+    answer: (
+      <article className="qn_answer">
+        <ul style={{ marginTop: "1rem" }}>
+          <li>
+            <a target="_blank" rel="noreferrer" href="https://quickref.me">
+              QuickRef
+            </a>
+            - A Quick cheetsheet for me
+          </li>
+          <li>
+            <a target="_blank" rel="noreferrer" href="https://nextjs.org/docs">
+              Vercel Docs
+            </a>
+            - The Book for Next.js
+          </li>
+          <li>
+            <a target="_blank" rel="noreferrer" href="https://duck.ai">
+              Duck AI
+            </a>{" "}
+            - For quick private answers
+          </li>
+          <li>
+            <a target="_blank" rel="noreferrer" href="https://linkedin.com">
+              LinkedIn
+            </a>{" "}
+            - To connect great minds
+          </li>
+          <li>
+            <a target="_blank" rel="noreferrer" href="https://leetcode.com">
+              LeetCode
+            </a>
+            - To get better everyday
+          </li>
+          <li>
+            <a target="_blank" rel="noreferrer" href="https://youtube.com">
+              YouTube
+            </a>{" "}
+            - To watch great content
+          </li>
+          <li>
+            <a href="https://x.com">X (Twitter)</a> - To be find Similar minds
+          </li>
+          <li>
+            <a href="https://github.com">GitHub</a> - To explore open source
+            planet
+          </li>
+        </ul>
+      </article>
+    ),
   },
   {
     question: "Hobbies?",
     command: "what hobbies",
-    answer: <div>I love to read books and watch movies.</div>,
+    answer: (
+      <article className="qn_answer">
+        <p>
+          Not gonna lie, I don&apos;t like <span>reading books</span>.
+        </p>
+        <p>
+          Whenever I&apos;m bored, I either go for <span>YouTube</span> or{" "}
+          <span>movies</span> or play <span>games</span> :D
+        </p>
+        <p>
+          Oh, and I also like to play with <span>wires</span> and{" "}
+          <span>electricity</span>, though I am not an electric guy &gt;&lt;
+        </p>
+      </article>
+    ),
+  },
+  {
+    question: "Learning Stack?",
+    command: "ls -laR /upcoming --format=list",
+    answer: (
+      <article className="qn_answer">
+        <ul>
+          <li>Web3</li>
+          <li>Cryptography</li>
+          <li>GraphQL</li>
+          <li>RabbitMQ</li>
+          <li>Rust</li>
+          <li>Microservices</li>
+          <li>Webassembly</li>
+          <li>Flutter</li>
+        </ul>
+      </article>
+    ),
   },
   {
     question: "Favorite books?",
     command: "which books",
     answer: (
-      <div>I love reading books about history, philosophy, and science.</div>
+      <article className="qn_answer">
+        <p>As I said, I don&apos;t like reading books :D</p>
+        <p>
+          But, I do love reading PDFs about some cryspy stuff. Like -
+          <span>Blockchain</span>, <span>Cryptography</span>,{" "}
+          <span>Algorithms</span>, <span>New Technologies</span>. And sometimes{" "}
+          <span>Interview questions</span> :)
+        </p>
+      </article>
     ),
   },
+  // {
+  //   question: "Favorite movies?",
+  //   command: "which movies",
+  //   answer: (
+  //     <article className="qn_answer">
+  //       <p>I love watching movies about adventure, romance, and comedy.</p>
+  //     </article>
+  //   ),
+  // },
   {
-    question: "Favorite movies?",
-    command: "which movies",
+    question: "Favorite quotes/lines?",
+    command: "cat quotes.txt | tail -n 13",
     answer: (
-      <div>I love watching movies about adventure, romance, and comedy.</div>
-    ),
-  },
-  {
-    question: "What is my favorite quote?",
-    command: "cat quotes.txt | tail -n 1",
-    answer: (
-      <div>
-        &quot;The best way to predict the future is to invent it.&quot; - Alan
-        Kay
-      </div>
+      <article className="quotes">
+        <ul>
+          <li>
+            The game is mine, nobody do it better.{" "}
+            <a href="https://www.youtube.com/watch?v=YDHguiBuFsA">- Source</a>
+          </li>
+          <li>
+            Don&apos;t let anyone tell ya what you should do.{" "}
+            <a href="https://www.youtube.com/watch?v=FHW7rIRQl38">- Source</a>
+          </li>
+          <li>
+            Just keep pushing through, cuz what u got to lose ?{" "}
+            <a href="https://www.youtube.com/watch?v=FHW7rIRQl38">- Source</a>
+          </li>
+          <li>
+            Nobody stopping me except for me now.{" "}
+            <a href="https://www.youtube.com/watch?v=FHW7rIRQl38">- Source</a>
+          </li>
+          <li>
+            Cause you have only one life, one chance to do it.{" "}
+            <a href="https://www.youtube.com/watch?v=FHW7rIRQl38">- Source</a>
+          </li>
+          <li>
+            One day you&apos;ll look back so glad you pursued it.{" "}
+            <a href="https://www.youtube.com/watch?v=FHW7rIRQl38">- Source</a>
+          </li>
+          <li>
+            I won&apos;t give up, I won&apos;t back down.{" "}
+            <a href="https://www.youtube.com/watch?v=FHW7rIRQl38">- Source</a>
+          </li>
+          <li>
+            We take action with passion, we&apos;re rocking now.{" "}
+            <a href="https://www.youtube.com/watch?v=FHW7rIRQl38">- Source</a>
+          </li>
+          <li>
+            I feel right and I&apos;m proud, hype and I&apos;m loud.{" "}
+            <a href="https://www.youtube.com/watch?v=TXcg25C56xM">- Source</a>
+          </li>
+          <li>
+            I&apos;m alone in a croud, I won&apos;t feel down.{" "}
+            <a href="https://www.youtube.com/watch?v=TXcg25C56xM">- Source</a>
+          </li>
+          <li>
+            Keep your head high, even when you are down inside.{" "}
+            <a href="https://www.youtube.com/watch?v=TXcg25C56xM">- Source</a>
+          </li>
+          <li>
+            Nothing is in your way but yourself.{" "}
+            <a href="https://www.youtube.com/watch?v=TXcg25C56xM">- Source</a>
+          </li>
+          <li>
+            You need nobody&apos;s help, you can make it through this hell.{" "}
+            <a href="https://www.youtube.com/watch?v=TXcg25C56xM">- Source</a>
+          </li>
+          <li>
+            This life is a prison if you don&apos;t have vision.{" "}
+            <a href="https://www.youtube.com/watch?v=TXcg25C56xM">- Source</a>
+          </li>
+          <li>
+            Be something somehow, don&apos;t let yourself down.{" "}
+            <a href="https://www.youtube.com/watch?v=TXcg25C56xM">- Source</a>
+          </li>
+        </ul>
+      </article>
     ),
   },
 ];
