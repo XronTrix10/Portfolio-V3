@@ -93,7 +93,10 @@ const Terminal: FC<TerminalProps> = ({
                   <pre>
                     {storedValue.map((line, index) => (
                       // eslint-disable-next-line react/no-array-index-key
-                      <span key={`${index}-${line[0]}`}>
+                      <span
+                        className="whitespace-pre-wrap break-words"
+                        key={`${index}-${line[0]}`}
+                      >
                         {line}
                         <br />
                       </span>
