@@ -70,7 +70,22 @@ export const executeCommand = (
   } else if (cmd.startsWith("rm")) {
     updateValue(appendCmd(preValue, cmd, say({ text: "can not remove file" })));
   } else if (cmd.startsWith("uname")) {
-    updateValue(appendCmd(preValue, cmd, "Browser JavaScript V8 engine"));
+    updateValue(
+      appendCmd(
+        preValue,
+        cmd,
+        navigator.platform +
+          ", " +
+          window.screen.width +
+          "x" +
+          window.screen.height +
+          ", " +
+          navigator.hardwareConcurrency +
+          " cores" +
+          "\n" +
+          navigator.userAgent,
+      ),
+    );
   } else if (cmd.startsWith("echo")) {
     const message = cmd.slice(5);
     updateValue(appendCmd(preValue, cmd, message));
