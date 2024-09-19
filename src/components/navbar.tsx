@@ -73,15 +73,12 @@ const Navbar = (): JSX.Element => {
 
             <Tooltip delayDuration={400}>
               <TooltipTrigger asChild>
-                <Link
-                  href="/experience"
-                  className={getLinkClass(pathname, "/experience")}
-                >
+                <Link href="/work" className={getLinkClass(pathname, "/work")}>
                   <WorkIcon />
                 </Link>
               </TooltipTrigger>
               <TooltipContent side="top" align="center">
-                Experience
+                Work
               </TooltipContent>
             </Tooltip>
 
