@@ -38,6 +38,10 @@
   }
 }
 
+.magic-icon {
+  animation: magic 2s ease-in-out 1s infinite;
+}
+
 /* .name {
     @apply text-7xl opacity-100 font-limelight relative;
     animation: none !important;
@@ -61,6 +65,16 @@
 } */
 
 /* ======= ANIMATIONS ======= */
+
+@keyframes magic {
+  0%,
+  100% {
+    color: var(--dark-gray);
+  }
+  50% {
+    color: var(--light);
+  }
+}
 
 @keyframes hey {
   0% {
