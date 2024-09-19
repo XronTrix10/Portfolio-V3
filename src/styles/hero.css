@@ -19,6 +19,10 @@
   @apply flex size-auto w-24 items-center gap-x-2 border border-dark-gray bg-transparent px-3 py-2 shadow-xl transition-all duration-300 hover:w-[6.7rem] hover:bg-light/10 hover:shadow-black;
 }
 
+.normal-btn {
+  @apply border border-dark-gray bg-transparent px-3 py-2 text-sm shadow-xl transition-all duration-300 hover:bg-light/10 hover:shadow-black;
+}
+
 .name-color {
   background: linear-gradient(to bottom, var(--light-gray), var(--dark-gray));
   background-clip: inherit;
