@@ -4,6 +4,7 @@ import type { JSX } from "react";
 import { Inter, JetBrains_Mono, Limelight } from "next/font/google";
 
 import "@/styles/index.css";
+import "@/styles/hero.css";
 import Background from "@/components/background";
 import classNames from "@/utils/class-names";
 import { GlobalProvider } from "@/lib/contexts/global-context";

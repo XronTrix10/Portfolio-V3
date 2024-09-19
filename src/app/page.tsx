@@ -1,5 +1,4 @@
 import type { JSX } from "react";
-import "@/styles/hero.css";
 import Link from "next/link";
 
 import TextAnimate from "@/components/ui/text-animate";
