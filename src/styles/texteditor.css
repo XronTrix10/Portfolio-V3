@@ -1,0 +1,75 @@
+/* styles.css */
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  cursor: text;
+}
+
+.label > span {
+  margin: 1rem;
+}
+
+.input-hidden {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.input-mirror {
+  display: block;
+  min-height: 1rem;
+  width: 100%;
+  word-break: break-all;
+  white-space: pre-wrap;
+  position: relative;
+  padding: 1rem;
+  font-size: x-large;
+  color: var(--light-gray);
+}
+
+.input-mirror span::before {
+  position: absolute;
+  background: var(--light);
+  height: 6px;
+  width: 1rem;
+  margin-top: 1.5rem;
+  /* Font width for Courier New */
+  display: inline-block;
+  content: "";
+}
+
+.blink span::before {
+  animation: blink 1s ease infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  49% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
