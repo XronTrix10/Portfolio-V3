@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 
 /**
@@ -8,7 +6,7 @@ import { useEffect, useState } from "react";
  * @param {string[]} initialValue - The initial value of the array.
  * @returns {[string[], (newValue: string[]) => void]} - The array and a function to update the array.
  */
-const useLocalStorageArray = (
+const useStorage = (
   key: string,
   initialValue: string[] = [],
 ): [string[], (newValue: string[]) => void] => {
@@ -49,4 +47,4 @@ const useLocalStorageArray = (
   return [storedValue, updateValue] as const; // Return a tuple
 };
 
-export default useLocalStorageArray;
+export default useStorage;

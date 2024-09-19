@@ -6,7 +6,7 @@ import Draggable from "react-draggable";
 import * as Dialog from "@radix-ui/react-dialog";
 
 import CloseIcon from "@/assets/icons/close";
-import useLocalStorageArray from "@/lib/hooks/useLocalStorageArray";
+import useStorage from "@/lib/hooks/useStorage.hook";
 import { executeCommand } from "@/lib/constants/commands.const";
 
 type TerminalProps = {
@@ -30,7 +30,7 @@ const Terminal: FC<TerminalProps> = ({
   inOutput,
 }: TerminalProps): JSX.Element => {
   const [input, setInput] = useState<string>("");
-  const [storedValue, updateValue] = useLocalStorageArray(".bash_history", []);
+  const [storedValue, updateValue] = useStorage(".bash_history", []);
   const terminalDiv = useRef<HTMLDivElement>(null);
 
   /**
