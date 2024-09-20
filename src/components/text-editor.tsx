@@ -1,18 +1,26 @@
 "use client";
 
-import type { ChangeEvent, FC, JSX } from "react";
-import { useRef, useState } from "react";
+import type { ChangeEvent, Dispatch, FC, JSX } from "react";
+import { useRef } from "react";
 
 import useCursor from "@/lib/hooks/useCursor.hook";
 
 import "@/styles/texteditor.css";
 
+type TextEditorProps = {
+  content: string;
+  setContent: Dispatch<React.SetStateAction<string>>;
+};
+
 /**
  * Renders the text editor component.
+ * @param {TextEditorProps} props the text editor component props.
  * @returns {JSX.Element} the text editor component.
  */
-const TextEditor: FC = (): JSX.Element => {
-  const [content, setContent] = useState("");
+const TextEditor: FC<TextEditorProps> = ({
+  content,
+  setContent,
+}: TextEditorProps): JSX.Element => {
   const {
     handleOnFocus: handleOnFocusCursor,
     handleOnBlur,
@@ -29,6 +37,7 @@ const TextEditor: FC = (): JSX.Element => {
    */
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setContent(event.target.value);
+    // console.log(event.target.value);
   };
 
   /**
