@@ -1,7 +1,7 @@
 "use client";
 
 import type { ChangeEvent, Dispatch, FC, JSX } from "react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import useCursor from "@/lib/hooks/useCursor.hook";
 
@@ -30,6 +30,14 @@ const TextEditor: FC<TextEditorProps> = ({
   } = useCursor(content);
 
   const refInput = useRef<HTMLInputElement>(null);
+
+  // Updates the input content on props change
+  useEffect(() => {
+    if (refInput.current) {
+      refInput.current.value = content;
+      refInput.current.focus();
+    }
+  }, [content]);
 
   /**
    * Handles the text editor input change.
