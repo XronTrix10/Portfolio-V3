@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import type { JSX } from "react";
 
+import type { StoreContactMsg } from "@/lib/@types";
 import type { ContactMe } from "@/lib/@types";
-import useStorage from "@/lib/hooks/useStorage.hook";
+import useLocalStorage from "@/lib/hooks/useLocalStorage.hook";
 
 import TextEditor from "./text-editor";
 
@@ -13,16 +14,16 @@ import TextEditor from "./text-editor";
  * @returns {JSX.Element} the ContactSection component.
  */
 const ContactSection = (): JSX.Element => {
-  const [contacts, setContacts] = useStorage("contacts", ["blank"]);
+  const [contacts, setContacts] = useLocalStorage<StoreContactMsg>("contacts", {
+    status: "blank",
+    message: "",
+    count: 0,
+  });
   const [content, setContent] = useState<string>("");
   const [data, setData] = useState<ContactMe>({
     message: "",
     contact: "",
   });
-
-  const state = useMemo(() => {
-    return contacts[0];
-  }, [contacts]);
 
   /**
    * Sends the contact data to the server.
@@ -39,17 +40,22 @@ const ContactSection = (): JSX.Element => {
   const handleSave = async (): Promise<void> => {
     if (!content) return;
 
-    if (state === "blank" || state === "sent") {
+    if (contacts.status === "blank" || contacts.status === "sent") {
       setData((data) => ({ ...data, message: content }));
-      const temp = [...contacts];
-      temp[0] = "wrote";
-      temp.push(content);
+      const temp: StoreContactMsg = {
+        status: "wrote", // set the status to wrote when a message is wrote
+        message: content, // set the message to the content
+        count: contacts.count,
+      };
       setContacts(temp);
       setContent("");
     } else {
       setData((data) => ({ ...data, contact: content }));
-      const temp = [...contacts];
-      temp[0] = "sent";
+      const temp: StoreContactMsg = {
+        status: "sent", // set the status to sent when a message is sent
+        message: contacts.message,
+        count: contacts.count + 1, // increment the count when a message is sent
+      };
       setContacts(temp);
       setContent("");
       await handleSend(data);
@@ -72,14 +78,14 @@ const ContactSection = (): JSX.Element => {
       className="flex flex-col items-center justify-center"
     >
       <h1 className="text-3xl">
-        {state === "blank"
+        {contacts.status === "blank"
           ? "Just text a Hi! 👋"
-          : state === "wrote"
+          : contacts.status === "wrote"
             ? "How can I reach you? 📲"
             : "You can text me again! 👋"}
       </h1>
       <h4 className="mt-6 text-dark-gray">
-        {state === "wrote" ? (
+        {contacts.status === "wrote" ? (
           <>
             <p>You can give anything! email, phone, social media, etc</p>
             <p className="text-center">
@@ -96,7 +102,7 @@ const ContactSection = (): JSX.Element => {
       <div className="mx-auto max-w-[40rem]">
         <TextEditor content={content} setContent={setContent} />
       </div>
-      {state === "wrote" && (
+      {contacts.status === "wrote" && (
         <span className="mx-auto text-xs text-dark-gray">
           hit Enter to send
         </span>
