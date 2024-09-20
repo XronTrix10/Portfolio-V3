@@ -1,26 +1,22 @@
-"use client";
-
-import { useState } from "react";
 import type { JSX } from "react";
+import dynamic from "next/dynamic";
 
 /**
- * description
+ * Thie dynamic function imports the ContactSection component dynamically and disables SSR.
+ * It is used to avoid SSR Hydration error as this section uses local storage from client side.
+ */
+const ContactSection = dynamic(() => import("@/components/contact-section"), {
+  ssr: false,
+});
+
+/**
+ * Renders the contact page section.
  * @returns {JSX.Element} the projects page.
  */
 const Page = (): JSX.Element => {
-  const [text, setText] = useState("");
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center">
-      <h1 className="text-3xl">Anything, just send a Hi! 👋</h1>
-
-      <div className="mt-12 flex w-[600px] gap-x-4">
-        <textarea
-          className="w-full resize-none border-b border-dark-gray/50 bg-transparent outline-none focus:outline-none"
-          value={text}
-          rows={4}
-          onChange={(e) => setText(e.target.value)}
-        />
-      </div>
+    <div className="grid min-h-screen place-content-center">
+      <ContactSection />
     </div>
   );
 };
