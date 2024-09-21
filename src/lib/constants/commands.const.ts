@@ -1,15 +1,15 @@
 import { say, think } from "cowsay";
+import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 /**
  * Terminal commands.
  * @type {object} commands - Terminal commands.
  */
 export const commands: { [key: string]: string } = {
-  pwd: "/home/guest",
   "cat welcome.txt": "Welcome in my portfolio!\n",
   date: new Date().toLocaleString(),
   time: new Date().toLocaleTimeString(),
-  help: "help - Displays all available commands\npwd- Print working directory\ncat - Displays the contents of a file\nls - Lists the contents of a directory\necho - Prints a message\nuname - Displays the current environment\nwhoami - Displays the user name\ndate - Displays the current date\ntime - Displays the current time\nclear - Clears the terminal\nrm - Try to remove a file\ncd - Try to change directory\nsudo - Try to run a command as root\n",
+  help: "help - Displays all available commands\npwd- Print working directory\ncat - Displays the contents of a file\nls - Lists the contents of a directory\necho - Prints a message\nuname - Displays the current environment\nwhoami - Displays the user name\ndate - Displays the current date\ntime - Displays the current time\nclear - Clears the terminal\ncd - Change the route\nrm - Try to remove a file\nsudo - Try to run a command as root\n",
 };
 
 /**
@@ -23,15 +23,22 @@ const appendCmd = (pre: string[], cmd: string, output: string): string[] => {
   return [...pre, `┌──(guest㉿trix)-[~]`, `└─$ ${cmd}`, `${output}\n`];
 };
 
+const routes = ["/home", "/work", "/projects", "/contact"];
+
 /**
- *  executes a command in the terminal.
+ * Executes a command in the terminal.
  * @param {string} cmd - the command to execute.
  * @param {string[]} preValue - the previous value of the terminal.
+ * @param {string} pathname - the pathname of the current page.
+ * @param {AppRouterInstance} router - the router instance.
  * @param {(newValue: string[]) => void} updateValue - the update value function.
  */
 export const executeCommand = (
   cmd: string,
   preValue: string[],
+  pathname: string,
+  router: AppRouterInstance,
+  // eslint-disable-next-line no-unused-vars
   updateValue: (newValue: string[]) => void,
 ): void => {
   if (!cmd) return;
@@ -48,15 +55,23 @@ export const executeCommand = (
       appendCmd(preValue, cmd, think({ text: "permission denied, sorry!" })),
     );
   } else if (cmd.startsWith("cd")) {
-    updateValue(
-      appendCmd(
-        preValue,
-        cmd,
-        think({
-          text: "Stay at home, no directory change!",
-        }),
-      ),
-    );
+    const path = cmd.slice(3);
+
+    if (routes.includes(path)) {
+      updateValue(appendCmd(preValue, cmd, `Teleporting to ${path}`));
+      router.push(path);
+    } else {
+      updateValue(
+        appendCmd(
+          preValue,
+          cmd,
+          `allowed paths: ${routes.join(", ")}\n\n` +
+            think({
+              text: `Can't take you to ${path}`,
+            }),
+        ),
+      );
+    }
   } else if (cmd.startsWith("ls")) {
     updateValue(
       appendCmd(
@@ -91,6 +106,8 @@ export const executeCommand = (
     updateValue(appendCmd(preValue, cmd, message));
   } else if (cmd.startsWith("whoami")) {
     updateValue(appendCmd(preValue, cmd, "guest"));
+  } else if (cmd === "pwd") {
+    updateValue(appendCmd(preValue, cmd, pathname));
   } else {
     updateValue(appendCmd(preValue, cmd, say({ text: "command not found" })));
   }

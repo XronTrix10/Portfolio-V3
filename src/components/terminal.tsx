@@ -4,6 +4,7 @@ import type { FC, JSX } from "react";
 import React, { useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import * as Dialog from "@radix-ui/react-dialog";
+import { usePathname, useRouter } from "next/navigation";
 
 import CloseIcon from "@/assets/icons/close";
 import useLocalStorage from "@/lib/hooks/useLocalStorage.hook";
@@ -36,6 +37,9 @@ const Terminal: FC<TerminalProps> = ({
   );
   const terminalDiv = useRef<HTMLDivElement>(null);
 
+  const pathname = usePathname();
+  const router = useRouter();
+
   /**
    * handles the terminal input change.
    * @param {React.ChangeEvent<HTMLInputElement>} e the terminal input change event.
@@ -51,7 +55,7 @@ const Terminal: FC<TerminalProps> = ({
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === "Enter") {
       e.preventDefault();
-      executeCommand(input, storedValue, updateValue);
+      executeCommand(input, storedValue, pathname, router, updateValue);
       setInput("");
     }
   };
