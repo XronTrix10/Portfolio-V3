@@ -9,7 +9,20 @@ export const commands: { [key: string]: string } = {
   "cat welcome.txt": "Welcome in my portfolio!\n",
   date: new Date().toLocaleString(),
   time: new Date().toLocaleTimeString(),
-  help: "help - Displays all available commands\npwd- Print working directory\ncat - Displays the contents of a file\nls - Lists the contents of a directory\necho - Prints a message\nuname - Displays the current environment\nwhoami - Displays the user name\ndate - Displays the current date\ntime - Displays the current time\nclear - Clears the terminal\ncd - Change the route\nrm - Try to remove a file\nsudo - Try to run a command as root\n",
+  help: `
+  help - Displays all available commands
+  pwd- Print working directory
+  cat - Displays the contents of a file
+  ls - Lists the contents of a directory
+  echo - Prints a message
+  uname - Displays the current environment
+  whoami - Displays the user name
+  date - Displays the current date
+  time - Displays the current time
+  clear - Clears the terminal
+  cd - Change the route
+  rm - Try to remove a file
+  sudo - Try to run a command as root\n`,
 };
 
 /**
