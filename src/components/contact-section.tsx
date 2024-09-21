@@ -33,7 +33,20 @@ const ContactSection = (): JSX.Element => {
    * @returns {Promise<void>} a promise that resolves when the contact data is sent.
    */
   const handleSend = async (data: ContactMe): Promise<void> => {
-    console.log(data);
+    setLoading(true);
+    try {
+      await fetch(process.env.NEXT_PUBLIC_MAIL_BACKEND! + "/api/mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   /**
@@ -60,7 +73,7 @@ const ContactSection = (): JSX.Element => {
       };
       setContacts(temp);
       setContent("");
-      await handleSend(data);
+      await handleSend({ ...data, contact: content });
     }
   };
 
