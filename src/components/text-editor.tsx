@@ -67,7 +67,9 @@ const TextEditor: FC<TextEditorProps> = ({
   return (
     <div className="grid min-h-56 place-content-center">
       <label className="label" onClick={handleOnFocusLabel}>
-        <span className={`input-mirror ${!paused ? "blink" : ""}`}>
+        <span
+          className={`input-mirror ${!paused ? "blink" : ""} ${!content ? " -translate-x-2 -translate-y-4" : ""}`}
+        >
           {beforeCursor}
           <span>{inCursor}</span>
           {afterCursor}
