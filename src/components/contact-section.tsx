@@ -6,6 +6,7 @@ import type { JSX } from "react";
 import type { StoreContactMsg } from "@/lib/@types";
 import type { ContactMe } from "@/lib/@types";
 import useLocalStorage from "@/lib/hooks/useLocalStorage.hook";
+import LoadingIcon from "@/assets/icons/loading";
 
 import TextEditor from "./text-editor";
 
@@ -20,6 +21,7 @@ const ContactSection = (): JSX.Element => {
     count: 0,
   });
   const [content, setContent] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<ContactMe>({
     message: "",
     contact: "",
@@ -82,7 +84,7 @@ const ContactSection = (): JSX.Element => {
           ? "Just text a Hi! 👋"
           : contacts.status === "wrote"
             ? "How can I reach you? 📲"
-            : "You can text me again! 👋"}
+            : "You can text me again! 😀"}
       </h1>
       <h4 className="mt-6 text-dark-gray">
         {contacts.status === "wrote" ? (
@@ -106,6 +108,20 @@ const ContactSection = (): JSX.Element => {
         <span className="mx-auto text-xs text-dark-gray">
           hit Enter to send
         </span>
+      )}
+      {loading ? (
+        <span className="mx-auto flex items-center gap-x-2 text-xs text-dark-gray">
+          sending your message
+          <div className="animate-spin">
+            <LoadingIcon size={12} />
+          </div>
+        </span>
+      ) : (
+        contacts.status === "sent" && (
+          <span className="mx-auto text-xs text-dark-gray">
+            your last message was sent
+          </span>
+        )
       )}
     </section>
   );
