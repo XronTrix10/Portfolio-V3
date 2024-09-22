@@ -90,25 +90,27 @@ const ContactSection = (): JSX.Element => {
   return (
     <section
       onKeyDown={handleKeyDown}
-      className="flex flex-col items-center justify-center"
+      className="flex flex-col items-center justify-center px-6 pb-32 md:p-0"
     >
-      <h1 className="text-3xl">
+      <h1 className="text-center text-2xl md:text-3xl">
         {contacts.status === "blank"
           ? "Just text a Hi! 👋"
           : contacts.status === "wrote"
             ? "How can I reach you? 📲"
             : "You can text me again! 😀"}
       </h1>
-      <h4 className="mt-6 text-dark-gray">
+      <h4 className="mt-6 text-sm text-dark-gray md:text-base">
         {contacts.status === "wrote" ? (
           <>
-            <p>You can give anything! email, phone, social media, etc</p>
+            <p className="text-center">
+              You can give anything! email, phone, social media, etc
+            </p>
             <p className="text-center">
               or you may leave &quot;anonymous&quot;
             </p>
           </>
         ) : (
-          <p>
+          <p className="text-center">
             After writing, hit <span className="text-light">Enter</span> to save
             and start sending :D
           </p>
