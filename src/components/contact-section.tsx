@@ -65,7 +65,7 @@ const ContactSection = (): JSX.Element => {
       setContacts(temp);
       setContent("");
     } else {
-      setData((data) => ({ ...data, contact: content }));
+      setData({ ...data, contact: content });
       const temp: StoreContactMsg = {
         status: "sent", // set the status to sent when a message is sent
         message: contacts.message,
@@ -73,7 +73,7 @@ const ContactSection = (): JSX.Element => {
       };
       setContacts(temp);
       setContent("");
-      await handleSend({ ...data, contact: content });
+      await handleSend({ message: contacts.message, contact: content });
     }
   };
 
