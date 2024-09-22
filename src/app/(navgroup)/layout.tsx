@@ -13,31 +13,15 @@ type NavLayoutProps = {
  * @param {NavLayoutProps} props the layout component props.
  * @returns {JSX.Element} the layout component.
  */
-const NavLayout: FC<NavLayoutProps> = async ({
+const NavLayout: FC<NavLayoutProps> = ({
   children,
-}: NavLayoutProps): Promise<JSX.Element> => {
-  let count = 1;
-
-  try {
-    const res = await fetch(new URL("/api/db", process.env.BASE_ORIGIN), {
-      method: "GET",
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const responseJson: { count: number } = await res.json();
-    count = responseJson.count;
-  } catch (error) {
-    console.error(error);
-  }
-
+}: NavLayoutProps): JSX.Element => {
   return (
     <div>
       <Navbar />
       <div className="mx-auto max-w-screen-lg 2xl:max-w-screen-xl">
         {children}
-        <Footer count={count} />
+        <Footer />
       </div>
     </div>
   );
