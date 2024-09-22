@@ -7,4 +7,4 @@ pages_build_output_dir = ".vercel/output/static"
 
 [[kv_namespaces]]
 binding = "PORTFOLIO_STORAGE"
-id = "f0e3ccc789f348a08f86ca7358b5cf60"
+id = "46b9c8409489410b92d3163f40af3bc6"
