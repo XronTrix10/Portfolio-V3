@@ -1,16 +1,19 @@
 "use client";
 
-import type { JSX } from "react";
+import type { FC, JSX } from "react";
 import { useEffect, useState } from "react";
 
+type AnimatedCountProps = {
+  target: number;
+};
+
 /**
- * Renders the visit counter component.
+ * Renders the visit counter component with loading.
  * It fetches the count from the database and shows an animated count.
  * @returns {JSX.Element} the counter component.
  */
 const Counter = (): JSX.Element => {
-  const [target, setTarget] = useState(100);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     /**
@@ -26,7 +29,7 @@ const Counter = (): JSX.Element => {
           },
         });
         const responseJson: { count: number } = await res.json();
-        setTarget(responseJson.count);
+        setCount(responseJson.count);
       } catch (error) {
         console.error(error);
       }
@@ -35,8 +38,23 @@ const Counter = (): JSX.Element => {
     void fetchCount();
   }, []);
 
+  if (!count) return <div>Fetching visits...</div>;
+
+  return <AnimatedCount target={count} />;
+};
+
+/**
+ * Renders the visit counter component with animation.
+ * @param {AnimatedCountProps} props the component props.
+ * @returns {JSX.Element} the counter component.
+ */
+const AnimatedCount: FC<AnimatedCountProps> = ({
+  target,
+}: AnimatedCountProps): JSX.Element => {
+  const [count, setCount] = useState(1);
+
   useEffect(() => {
-    const speed = 10;
+    const speed = target > 100 ? 10 : 100;
     const intervalId = setInterval(() => {
       if (count < target) {
         setCount(count + 1);

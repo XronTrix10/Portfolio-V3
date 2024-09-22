@@ -16,7 +16,7 @@ import Counter from "./count";
  */
 const Footer = (): JSX.Element => {
   return (
-    <footer className="absolute bottom-6 left-1/2 flex w-full max-w-screen-lg -translate-x-1/2 items-center justify-between px-2 text-xs text-dark-gray/80 2xl:max-w-screen-xl">
+    <footer className="absolute bottom-6 left-1/2 z-20 flex w-full max-w-screen-lg -translate-x-1/2 items-center justify-between px-2 text-xs text-dark-gray/80 2xl:max-w-screen-xl">
       <div className="relative flex items-center gap-x-2">
         <Link
           href="https://github.com/XronTrix10"

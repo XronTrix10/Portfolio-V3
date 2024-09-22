@@ -1,6 +1,12 @@
 import type { JSX } from "react";
+import type { Metadata } from "next";
 
 import { MagicIcon } from "@/assets/icons";
+
+export const metadata: Metadata = {
+  title: "Personal",
+  description: "The personal page of xrontrix portfolio",
+};
 
 /**
  * description
