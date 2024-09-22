@@ -5,3 +5,7 @@ export { default as SendMessageIcon } from "./send-message";
 export { default as UserPersonalIcon } from "./user-personal";
 export { default as Terminal } from "./terminal";
 export { default as MagicIcon } from "./magic";
+export { default as GitHubIcon } from "./github";
+export { default as LeetcodeIcon } from "./leetcode";
+export { default as TwitterIcon } from "./twitter";
+export { default as LinkedInIcon } from "./linkedin";
