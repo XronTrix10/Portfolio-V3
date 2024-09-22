@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import Divider from "@/components/ui/divider";
@@ -6,8 +7,13 @@ import BlinkingCursor from "@/components/ui/blinking-cursor";
 import Question from "@/components/question";
 import { questions } from "@/lib/constants/questions.const";
 
+export const metadata: Metadata = {
+  title: "Home",
+  description: "The home page of the portfolio website",
+};
+
 /**
- * renders the home page.
+ * Renders the home page.
  * @returns {JSX.Element} the home page.
  */
 const page = (): JSX.Element => {
