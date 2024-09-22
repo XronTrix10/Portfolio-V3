@@ -1,4 +1,4 @@
-import type { FC, JSX } from "react";
+import type { JSX } from "react";
 import Link from "next/link";
 
 import {
@@ -8,16 +8,13 @@ import {
   TwitterIcon,
 } from "@/assets/icons";
 
-type FooterProps = {
-  count: number;
-};
+import Counter from "./count";
 
 /**
  * Renders the Footer component.
- * @param {FooterProps} props the Footer component props.
  * @returns {JSX.Element} the Footer component.
  */
-const Footer: FC<FooterProps> = ({ count }: FooterProps): JSX.Element => {
+const Footer = (): JSX.Element => {
   return (
     <footer className="absolute bottom-6 left-1/2 flex w-full max-w-screen-lg -translate-x-1/2 items-center justify-between px-2 text-xs text-dark-gray/80 2xl:max-w-screen-xl">
       <div className="relative flex items-center gap-x-2">
@@ -47,9 +44,7 @@ const Footer: FC<FooterProps> = ({ count }: FooterProps): JSX.Element => {
         </Link>
       </div>
 
-      <div>
-        <span className="text-light-gray/70">{count}</span> visits so far
-      </div>
+      <Counter />
     </footer>
   );
 };
