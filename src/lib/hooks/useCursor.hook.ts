@@ -4,6 +4,7 @@ import { useState } from "react";
 type CursorReturns = {
   handleOnFocus: () => void;
   handleOnBlur: () => void;
+  // eslint-disable-next-line no-unused-vars
   handleKeyDown: (event: KeyboardEvent) => void;
   shifts: number;
   paused: boolean;
