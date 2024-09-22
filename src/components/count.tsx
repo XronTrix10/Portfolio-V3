@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
  * @returns {JSX.Element} the counter component.
  */
 const Counter = (): JSX.Element => {
-  const speed = 10;
-
   const [target, setTarget] = useState(100);
   const [count, setCount] = useState(1);
 
@@ -38,6 +36,7 @@ const Counter = (): JSX.Element => {
   }, []);
 
   useEffect(() => {
+    const speed = 10;
     const intervalId = setInterval(() => {
       if (count < target) {
         setCount(count + 1);
@@ -46,7 +45,7 @@ const Counter = (): JSX.Element => {
       }
     }, speed);
     return (): void => clearInterval(intervalId);
-  }, [count, target, speed]);
+  }, [count, target]);
 
   return (
     <div>
