@@ -44,7 +44,7 @@ const Navbar = (): JSX.Element => {
   return (
     <nav className="fixed bottom-6 z-20 w-screen">
       <div className="mx-auto flex w-fit items-center gap-x-4">
-        <div className="flex w-fit items-center justify-between gap-x-1 rounded-full border border-dark-gray/50 bg-light/5 p-1 text-sm text-light-gray/80 shadow-xl shadow-black *:text-xs 2xl:gap-x-2 2xl:p-2">
+        <div className="flex w-fit items-center justify-between gap-x-1 rounded-full border border-dark-gray/50 bg-light/5 p-1 text-sm text-light-gray/80 shadow-xl shadow-black backdrop-blur-sm *:text-xs 2xl:gap-x-2 2xl:p-2">
           <TooltipProvider>
             <Tooltip delayDuration={400}>
               <TooltipTrigger asChild>
