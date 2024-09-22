@@ -35,7 +35,7 @@ const ContactSection = (): JSX.Element => {
   const handleSend = async (data: ContactMe): Promise<void> => {
     setLoading(true);
     try {
-      await fetch(process.env.NEXT_PUBLIC_MAIL_BACKEND! + "/api/mail", {
+      await fetch(new URL("/api/mail", process.env.NEXT_PUBLIC_MAIL_BACKEND), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
