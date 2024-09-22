@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 /**
@@ -8,6 +9,11 @@ import dynamic from "next/dynamic";
 const ContactSection = dynamic(() => import("@/components/contact-section"), {
   ssr: false,
 });
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "The contact page for xrontrix portfolio",
+};
 
 /**
  * Renders the contact page section.
