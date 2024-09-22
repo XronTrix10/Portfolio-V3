@@ -18,8 +18,11 @@ export const metadata: Metadata = {
  */
 const page = (): JSX.Element => {
   return (
-    <div className="flex min-h-screen grow flex-row items-center justify-center gap-x-12 2xl:gap-x-20">
-      <div className="flex w-1/2 flex-col px-2 text-dark-gray 2xl:px-6 2xl:text-lg">
+    <div
+      className="flex min-h-screen grow flex-col items-center justify-center gap-y-14 
+    px-6 pb-48 pt-12 md:flex-row md:gap-x-12 md:gap-y-0 md:p-0 2xl:gap-x-20"
+    >
+      <div className="flex flex-col px-2 text-dark-gray md:w-1/2 2xl:px-6 2xl:text-lg">
         <article>
           <span className="font-inter text-5xl text-light 2xl:text-6xl">I</span>{" "}
           am a<span className="text-light"> front-end</span> developer with a
@@ -41,10 +44,12 @@ const page = (): JSX.Element => {
         </article>
       </div>
 
-      <Divider direction="vertical" className="h-72 self-center 2xl:h-96" />
+      <div className="w-full self-center px-12 md:w-px md:px-0">
+        <Divider />
+      </div>
 
-      <div className="w-1/2">
-        <h3 className="px-2 font-inter text-4xl font-medium text-light 2xl:text-[2.5rem]">
+      <div className="md:w-1/2">
+        <h3 className="px-2 font-inter text-3xl font-medium text-light md:text-4xl 2xl:text-[2.5rem]">
           Curious Questions
         </h3>
 
