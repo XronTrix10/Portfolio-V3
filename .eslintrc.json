@@ -28,9 +28,16 @@
     "plugin:jsdoc/recommended",
     "plugin:tailwindcss/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:eslint-plugin-next-on-pages/recommended",
     "prettier"
   ],
-  "plugins": ["react", "jsdoc", "tailwindcss", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "jsdoc",
+    "tailwindcss",
+    "@typescript-eslint",
+    "eslint-plugin-next-on-pages"
+  ],
   "rules": {
     // Disallow the use of variables that are defined but never used
     "no-unused-vars": "warn",
