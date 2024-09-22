@@ -1,6 +1,7 @@
 import type { FC, JSX } from "react";
 
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 type NavLayoutProps = {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ const NavLayout: FC<NavLayoutProps> = ({
       <Navbar />
       <div className="mx-auto max-w-screen-lg 2xl:max-w-screen-xl">
         {children}
+        <Footer count={78} />
       </div>
     </div>
   );
