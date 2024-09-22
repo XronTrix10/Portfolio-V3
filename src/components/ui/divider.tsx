@@ -2,28 +2,26 @@ import type { FC, JSX } from "react";
 
 import classNames from "@/utils/class-names";
 
-type dividerProps = {
-  direction?: "horizontal" | "vertical";
+type DividerProps = {
   className?: string;
 };
 
 /**
- * renders the divider component.
- * @param {dividerProps} props the divider component props.
- * @returns {JSX.Element} the divider component.
+ * renders the Divider component.
+ * @param {DividerProps} props the Divider component props.
+ * @returns {JSX.Element} the Divider component.
  */
-const divider: FC<dividerProps> = ({
-  direction = "horizontal",
+const Divider: FC<DividerProps> = ({
   className = "",
-}: dividerProps): JSX.Element => {
+}: DividerProps): JSX.Element => {
   return (
     <div
       className={classNames(
-        `bg-dark-gray ${direction === "horizontal" ? "h-px" : "w-px"}`,
+        "bg-dark-gray h-px w-full md:h-72 2xl:h-96 md:w-px",
         className,
       )}
     />
   );
 };
 
-export default divider;
+export default Divider;

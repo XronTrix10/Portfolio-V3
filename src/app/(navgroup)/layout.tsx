@@ -19,7 +19,7 @@ const NavLayout: FC<NavLayoutProps> = ({
   return (
     <div>
       <Navbar />
-      <div className="mx-auto max-w-screen-lg 2xl:max-w-screen-xl">
+      <div className="relative mx-auto max-w-screen-lg 2xl:max-w-screen-xl">
         {children}
         <Footer />
       </div>
