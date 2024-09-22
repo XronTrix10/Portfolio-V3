@@ -9,16 +9,16 @@ export const metadata: Metadata = {
 };
 
 /**
- * description
+ * Renders the personal page.
  * @returns {JSX.Element} the projects page.
  */
 const Page = (): JSX.Element => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center text-light-gray">
-      <h4 className="flex gap-x-4 text-light">
+    <div className="flex min-h-screen flex-col items-center justify-center px-6 text-light-gray">
+      <h4 className="flex flex-col items-center gap-x-4 gap-y-2 text-center text-light md:flex-row">
         Loading personal stuff will take some time <MagicIcon />
       </h4>
-      <p className="mt-4">Come back within a few days!</p>
+      <p className="mt-4 text-sm">Come back within a few days!</p>
     </div>
   );
 };
