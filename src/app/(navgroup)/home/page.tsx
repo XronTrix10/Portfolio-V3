@@ -20,9 +20,9 @@ const page = (): JSX.Element => {
   return (
     <div
       className="flex min-h-screen grow flex-col items-center justify-center gap-y-14 
-    px-6 pb-48 pt-12 md:flex-row md:gap-x-12 md:gap-y-0 md:p-0 2xl:gap-x-20"
+    px-6 pb-48 pt-14 md:flex-row md:gap-x-12 md:gap-y-0 md:p-0 2xl:gap-x-20"
     >
-      <div className="flex flex-col px-2 text-dark-gray md:w-1/2 2xl:px-6 2xl:text-lg">
+      <div className="flex flex-col px-2 text-center text-dark-gray md:w-1/2 md:text-left 2xl:px-6 2xl:text-lg">
         <article>
           <span className="font-inter text-5xl text-light 2xl:text-6xl">I</span>{" "}
           am a<span className="text-light"> front-end</span> developer with a
