@@ -20,7 +20,7 @@ const NavbarTerminal = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="hidden rounded-full border border-dark-gray/50 bg-light/5 p-1 text-sm text-light-gray/80 shadow-xl shadow-black *:text-xs md:flex 2xl:px-3 2xl:py-2">
+    <div className="rounded-full border border-dark-gray/50 bg-light/5 p-1 text-sm text-light-gray/80 shadow-xl shadow-black backdrop-blur-sm *:text-xs 2xl:px-3 2xl:py-2">
       <TooltipProvider>
         <Tooltip delayDuration={400}>
           <TooltipTrigger asChild>
