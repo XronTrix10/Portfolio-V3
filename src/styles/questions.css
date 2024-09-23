@@ -17,11 +17,19 @@
 }
 
 .qn_answer {
-  padding-right: 8rem;
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   row-gap: 0.7rem;
+
+  /* Apply padding-right for larger screens */
+  padding-right: 8rem;
+
+  /* Media query to remove padding-right on small screens */
+  @media (max-width: 600px) {
+    /* Adjust the max-width as needed */
+    padding-right: 0;
+  }
 
   span {
     color: var(--golden-yellow);
