@@ -11,7 +11,7 @@ const ContactSection = dynamic(() => import("@/components/contact-section"), {
 });
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact | Xron Trix",
   description: "The contact page for xrontrix portfolio",
 };
 

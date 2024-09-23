@@ -8,7 +8,7 @@ import Question from "@/components/question";
 import { questions } from "@/lib/constants/questions.const";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Home | Xron Trix",
   description: "The home page of the portfolio website",
 };
 

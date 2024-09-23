@@ -28,6 +28,10 @@ const Home = (): JSX.Element => {
           <div className="duration-300 group-hover:translate-x-2">&#x27A4;</div>
         </Link>
       </div>
+
+      <div className="identity absolute bottom-12 mx-auto self-center text-xs text-dark-gray md:text-sm">
+        Made with blurry eyes at midnight 🌙
+      </div>
     </section>
   );
 };

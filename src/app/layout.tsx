@@ -30,6 +30,35 @@ const limelight = Limelight({
 export const metadata: Metadata = {
   title: "Xron Trix",
   description: "A portfolio website for Xron Trix",
+  openGraph: {
+    type: "website",
+    url: "https://xrontrix.pages.dev",
+    title: "Xron Trix",
+    description: "A portfolio website for Xron Trix",
+    images: [
+      {
+        url: "https://gist.github.com/user-attachments/assets/57338740-e086-4af1-bf8f-d94d66549de7",
+        width: 1200,
+        height: 630,
+        alt: "Xron Trix",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@XronTrix10",
+    creator: "@XronTrix10",
+    title: "Xron Trix",
+    description: "A portfolio website for Xron Trix",
+    images: [
+      {
+        url: "https://gist.github.com/user-attachments/assets/57338740-e086-4af1-bf8f-d94d66549de7",
+        width: 1200,
+        height: 630,
+        alt: "Xron Trix",
+      },
+    ],
+  },
 };
 
 /**
