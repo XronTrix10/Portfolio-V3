@@ -1,0 +1,11 @@
+#:schema node_modules/wrangler/config-schema.json
+# rename the file to wrangler.toml and fill in the fields
+
+name = "<PROJECT_NAME>"
+compatibility_date = "<DATE>"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[[kv_namespaces]]
+binding = "<KV_NAMESPACE_NAME>"
+id = "<KV_NAMESPACE_ID>"
