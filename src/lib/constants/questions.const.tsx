@@ -208,7 +208,7 @@ export const questions: {
             </tr>
             <tr>
               <td>Linux</td>
-              <td>Debian, Arch (3+ Yr+ Experience)</td>
+              <td>Debian, Arch (3 Yr+ Experience)</td>
             </tr>
             <tr>
               <td>Cryptography, Encryption</td>
