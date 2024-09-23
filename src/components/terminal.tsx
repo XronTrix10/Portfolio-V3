@@ -73,12 +73,20 @@ const Terminal: FC<TerminalProps> = ({
         <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
         <Dialog.Content className="fixed inset-0 flex items-center justify-center">
           <Dialog.Title />
-          <Draggable handle=".terminal-header">
-            <div className="h-[450px] w-[700px] overflow-hidden rounded-xl bg-black/80 shadow-lg backdrop-blur-sm">
-              {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-              <div className="terminal-header flex cursor-move items-center justify-between bg-gradient-to-r from-dark-gray to-dark py-1 pl-4 pr-2 text-light">
+          <Draggable handle=".terminal-header" cancel=".close-btn">
+            <div
+              className="h-3/4 w-11/12 overflow-hidden rounded-xl bg-black/80 shadow-lg 
+            backdrop-blur-sm md:h-[450px] md:w-[700px]"
+            >
+              <div
+                // eslint-disable-next-line tailwindcss/no-custom-classname
+                className="terminal-header flex cursor-move items-center justify-between 
+              bg-gradient-to-r from-dark-gray to-dark py-1 pl-4 pr-2 text-light"
+              >
                 <span className="text-sm">Terminal Pro</span>
-                <Dialog.Close className="p-[2px] hover:bg-red-500">
+
+                {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+                <Dialog.Close className="close-btn z-50 p-[2px] hover:bg-red-500">
                   <CloseIcon size={18} />
                 </Dialog.Close>
               </div>
@@ -120,7 +128,8 @@ const Terminal: FC<TerminalProps> = ({
                         autoFocus
                         spellCheck={false}
                         placeholder="Type help for commands..."
-                        className="w-[500px] border-none bg-transparent text-light outline-none placeholder:text-dark-gray"
+                        className="w-[500px] border-none bg-transparent text-light outline-none
+                         placeholder:text-dark-gray"
                       />
                     </span>
                   </pre>
