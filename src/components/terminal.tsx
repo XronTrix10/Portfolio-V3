@@ -105,7 +105,7 @@ const Terminal: FC<TerminalProps> = ({
                     <div className="mt-3">{inOutput}</div>
                   </div>
                 ) : (
-                  <pre>
+                  <pre className="whitespace-pre-wrap break-words">
                     {storedValue.map((line, index) => (
                       <span
                         className="whitespace-pre-wrap break-words"
@@ -128,8 +128,8 @@ const Terminal: FC<TerminalProps> = ({
                         autoFocus
                         spellCheck={false}
                         placeholder="Type help for commands..."
-                        className="w-[500px] border-none bg-transparent text-light outline-none
-                         placeholder:text-dark-gray"
+                        className="border-none bg-transparent text-light outline-none placeholder:text-dark-gray
+                         md:w-[500px]"
                       />
                     </span>
                   </pre>
