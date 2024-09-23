@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { MagicIcon } from "@/assets/icons";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Projects | Xron Trix",
   description: "The projects page of xrontrix portfolio",
 };
 
