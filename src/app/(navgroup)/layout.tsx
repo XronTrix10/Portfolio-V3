@@ -1,9 +1,5 @@
-"use client";
-
 import type { FC, JSX } from "react";
-import { ApolloProvider } from "@apollo/client";
 
-import client from "@/lib/apolloClient";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -24,7 +20,7 @@ const NavLayout: FC<NavLayoutProps> = ({
     <div>
       <Navbar />
       <div className="relative mx-auto max-w-screen-lg 2xl:max-w-screen-xl">
-        <ApolloProvider client={client}>{children}</ApolloProvider>
+        {children}
         <Footer />
       </div>
     </div>
