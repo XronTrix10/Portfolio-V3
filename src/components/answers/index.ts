@@ -1,0 +1,13 @@
+export { default as ManXrontrix } from "./man-xrontrix";
+export { default as InfoXrontrix } from "./info-xrontrix";
+export { default as WhoisXrontrix } from "./whois-xrontrix";
+export { default as WhereisXrontrix } from "./whereis-xrontrix";
+export { default as WhichRole } from "./which-role";
+export { default as Strengths } from "./describe-strengths";
+export { default as WhichTechs } from "./which-techs";
+export { default as WhichOS } from "./which-os";
+export { default as FavWebs } from "./favourite-websites";
+export { default as WhatHobbies } from "./what-hobbies";
+export { default as LearnStack } from "./learning-stack";
+export { default as WhichBooks } from "./which-books";
+export { default as FavQuotes } from "./favourite-quotes";
