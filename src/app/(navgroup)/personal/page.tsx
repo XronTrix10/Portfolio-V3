@@ -2,7 +2,6 @@ import type { JSX } from "react";
 import type { Metadata } from "next";
 
 import { MagicIcon } from "@/assets/icons";
-import UserSessionProgress from "@/components/userProgress";
 
 export const metadata: Metadata = {
   title: "Personal | Xron Trix",
@@ -20,7 +19,6 @@ const Page = (): JSX.Element => {
         Loading personal stuff will take some time <MagicIcon />
       </h4>
       <p className="mt-4 text-sm">Come back within a few days!</p>
-      <UserSessionProgress username="XronTrix10" />
     </div>
   );
 };

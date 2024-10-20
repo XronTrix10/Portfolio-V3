@@ -1,10 +1,36 @@
+"use client";
+
 import type { JSX } from "react";
+import { useEffect, useState } from "react";
+
+import type { UserData } from "@/lib/@types";
 
 /**
  * answers/info-xrontrix component.
  * @returns {JSX.Element} the component.
  */
 const InfoXrontrix = (): JSX.Element => {
+  const [solvedCount, setSolvedCount] = useState<number>(120);
+
+  useEffect(() => {
+    /**
+     * Fetches the Leetcode user data from the API.
+     */
+    const fetchData = async (): Promise<void> => {
+      try {
+        const result = await fetch(
+          `https://alfa-leetcode-api.onrender.com/XronTrix10/solved`,
+        );
+        const resultJson: UserData = await result.json();
+        setSolvedCount(resultJson.totalSubmissionNum[0].count);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <article className="qn_answer">
       {/* Basics table */}
@@ -139,7 +165,7 @@ const InfoXrontrix = (): JSX.Element => {
         <tbody>
           <tr>
             <td>Data structure & Algorithms</td>
-            <td>Leetcode 100+ Solutions</td>
+            <td>Leetcode {solvedCount}+ Solutions</td>
           </tr>
           <tr>
             <td>Computer Network</td>
