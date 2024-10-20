@@ -2,19 +2,21 @@ import type { ReactNode } from "react";
 
 import "@/styles/questions.css";
 
-import ManXrontrix from "@/components/answers/man-xrontrix";
-import InfoXrontrix from "@/components/answers/info-xrontrix";
-import WhoisXrontrix from "@/components/answers/whois-xrontrix";
-import WhereisXrontrix from "@/components/answers/whereis-xrontrix";
-import WhichRole from "@/components/answers/which-role";
-import Strengths from "@/components/answers/describe-strengths";
-import WhichTechs from "@/components/answers/which-techs";
-import WhichOS from "@/components/answers/which-os";
-import FavWebs from "@/components/answers/favourite-websites";
-import WhatHobbies from "@/components/answers/what-hobbies";
-import LearnStack from "@/components/answers/learning-stack";
-import WhichBooks from "@/components/answers/which-books";
-import FavQuotes from "@/components/answers/favourite-quotes";
+import {
+  FavQuotes,
+  FavWebs,
+  InfoXrontrix,
+  LearnStack,
+  ManXrontrix,
+  Strengths,
+  WhatHobbies,
+  WhereisXrontrix,
+  WhichBooks,
+  WhichOS,
+  WhichRole,
+  WhichTechs,
+  WhoisXrontrix,
+} from "@/components/answers";
 
 /**
  * Terminal commands.
